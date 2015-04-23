@@ -9,6 +9,7 @@ class Fixnum
         quarters = counter./(25)
         counter = counter - (quarters * 25)
         coin_count = coin_count + quarters
+    #    "You have " + quarters + " quarters"
 
       elsif counter/10 !=0
         dimes = counter./(10)
@@ -19,6 +20,12 @@ class Fixnum
         nickels = counter./5
         counter = counter - (nickels * 5)
         coin_count = coin_count + nickels
+
+
+      else counter/1 != 0
+        pennies = counter./1
+        counter = counter - pennies
+        coin_count = coin_count + pennies
       end
     end
     coin_count
