@@ -14,6 +14,11 @@ class Fixnum
         dimes = counter./(10)
         counter = counter - (dimes * 10)
         coin_count = coin_count + dimes
+
+      elsif counter/5 != 0
+        nickels = counter./5
+        counter = counter - (nickels * 5)
+        coin_count = coin_count + nickels
       end
     end
     coin_count

@@ -13,8 +13,13 @@ describe("Fixnum#Coin_counter") do
     expect((75).coin_combo()).to(eq(3))
   end
 
-  it('returns 85 cents is counter equals ') do
+  it('returns 85 cents is counter equals 4') do
     expect((85).coin_combo()).to(eq(4))
   end
+
+  it('returns 90 cents is counter equals 5') do
+    expect((90).coin_combo()).to(eq(5))
+  end
+
 
 end
