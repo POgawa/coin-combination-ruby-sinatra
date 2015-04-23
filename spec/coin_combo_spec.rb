@@ -1,7 +1,10 @@
 require "rspec"
 require "pry"
 require "coin_combo"
-require "capybara/rspec"
+require('capybara/rspec')
+require('./app')
+Capybara.app = Sinatra::Application
+
 
 
 describe("Fixnum#Coin_counter") do
@@ -23,5 +26,17 @@ describe("Fixnum#Coin_counter") do
 
   it('returns 91 cents is equal to 3 quarters, 1 dime, 1 nickel and 1 penny') do
     expect((91).coin_combo()).to(eq(6))
+  end
+
+end
+
+
+describe('coins combo path', {:type => :feature}) do
+  it('accepts users change amount and returns the amount of coins given') do
+    visit('/')
+    fill_in('coins', :with => "85")
+    click_button('Send')
+    expect(page).to have_content('4')
+
   end
 end
